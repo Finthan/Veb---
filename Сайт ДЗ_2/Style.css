@@ -43,13 +43,6 @@ body
     height: 100%;
 }
 
-#FrameRight
-{
-    float: right;
-    width: 20%;
-    height: 100%;
-}
-
 #FrameCenter
 {
     float: left;
@@ -57,6 +50,13 @@ body
     height: 100%;
     font-size: 19px;
     font-weight: 600;
+}
+
+#FrameRight
+{
+    float: right;
+    width: 20%;
+    height: 100%;
 }
 
 #clear
@@ -71,7 +71,7 @@ body
     height: 40px;
 }
 
-#video
+#VideoText
 {
     width: 500px;
     height: 282px;
@@ -84,6 +84,22 @@ h2
     font-size: 3vw;
 }
 
+hr
+{
+    border: none;
+    color: rgb(214, 68, 228);
+    background-color: rgb(214, 68, 228);
+    height: 1px;
+}
+
+.VideoAdvertising
+{
+    height: 355px;
+    width: 200px;
+    border: 0;
+    margin-top: 40px;
+}
+
 .ContentText
 {
     text-align: justify;
@@ -92,7 +108,7 @@ h2
 .verse
 {
     text-align: justify;
-    margin: 25px 24% 0 26%;
+    margin: 25px 23% 0 26%;
 }
 
 .ListUl
@@ -105,12 +121,6 @@ h2
     text-align: left;
 }
 
-.advertising
-{
-    text-align: center;
-    vertical-align: middle;
-}
-
 .author
 {
     text-align: right;
@@ -120,14 +130,6 @@ h2
 {
     width: 45%;
     margin: 36px;
-}
-
-.gif
-{
-    height: 100%;
-    width: 90%;
-    margin-bottom: 100px;
-    margin-top: 50px;
 }
 
 .left
@@ -255,7 +257,7 @@ nav
 
 @media screen and (max-width: 690px)
 {
-    #video
+    #VideoText
     {
         width: 45%;
         height: auto;
@@ -267,7 +269,7 @@ nav
 @media print 
 {
     #navigation, nav, #FrameLeft, #FrameRight, 
-    #video, #header, #footer, #menu, #VideoAdvertising
+    #VideoText, #header, #footer, #menu
     {
         display: none;
     }
