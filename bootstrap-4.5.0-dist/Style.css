@@ -1,0 +1,195 @@
+h1
+{
+    text-align: center;
+    font-size: 30px;
+}
+
+h4
+{
+    text-align: justify;
+    font-family: Algeria One;
+    font-size: 20px;
+}
+
+a.music
+{
+  font-family: Algeria One;
+  color: rgb(62, 166, 197);
+}
+
+.left
+{
+    float: left;
+    height: 225px;
+    margin: 7px 7px 7px 0;
+}
+
+.ContentText
+{
+    text-align: justify;
+}
+
+.ListUl
+{
+    text-align: center;
+}
+
+.ListLi
+{
+    text-align: left;
+}
+
+.VideoAdvertising
+{
+    height: 310px;
+    width: 179px;
+    border: 0;
+    margin-top: 40px;
+}
+
+.Music
+{
+    font-size: 25px;
+    margin-left: 20;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.Video
+{
+    width: 100%;
+}
+
+.justify{
+
+    text-align: justify;
+}
+
+.img
+{
+    width: 100%;
+}
+
+.advertising
+{
+    margin-top: 45px;
+    width: 65%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.verse
+{
+    text-align: justify;
+    margin: 25px 23% 0 26%;
+}
+
+span.AnotherOneBitesTheDust
+{
+    background: url(ImageMusic/1AOBTD.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+    float: left;
+}
+span.AnotherOneBitesTheDust:hover
+{
+    background: url(ImageMusic/2AOBTD.svg) no-repeat;
+    text-align: left;
+}
+
+span.BohemianRhapsody
+{
+    background: url(ImageMusic/1BR.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.BohemianRhapsody:hover
+{
+    background: url(ImageMusic/2BR.svg) no-repeat;
+}
+
+span.DoNotStopMeNow
+{
+    background: url(ImageMusic/1DSMN.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.DoNotStopMeNow:hover
+{
+    background: url(ImageMusic/2DSMN.svg) no-repeat;
+}
+
+span.IWantToBreakFree
+{
+    background: url(ImageMusic/1IWTBF.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.IWantToBreakFree:hover
+{
+    background: url(ImageMusic/2IWTBF.svg) no-repeat;
+}
+
+span.KillerQueen
+{
+    background: url(ImageMusic/1QLK.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.KillerQueen:hover
+{
+    background: url(ImageMusic/2QLK.svg) no-repeat;
+}
+
+span.RadioGaGa
+{
+    background: url(ImageMusic/1RGG.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.RadioGaGa:hover
+{
+    background: url(ImageMusic/2RGG.svg) no-repeat;
+}
+
+span.TheShowMustGoOn
+{
+    background: url(ImageMusic/1TSMGO.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.TheShowMustGoOn:hover
+{
+    background: url(ImageMusic/2TSMGO.svg) no-repeat;
+}
+
+span.WeAreTheChampions
+{
+    background: url(ImageMusic/1WATC.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.WeAreTheChampions:hover
+{
+    background: url(ImageMusic/2WATC.svg) no-repeat;
+}
+
+span.WeWillRockYou
+{
+    background: url(ImageMusic/1WWRY.svg) no-repeat;
+    display: block;
+    height: 70px;
+    width: 70px;
+}
+span.WeWillRockYou:hover
+{
+    background: url(ImageMusic/2WWRY.svg) no-repeat;
+}
