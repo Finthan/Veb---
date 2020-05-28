@@ -53,18 +53,22 @@ function array()
     var data = document.getElementsByClassName("Value");
     var sum = 0;
     var out;
-    var i = 0
+    var i = 0;
     while (i < data.length)
     {
         for (var j = i; j < i + 8; j++)
         {
-            sum += +data[i].value;
+            sum += +data[j].value;
         }
-        if (data[i].value > sum)
+        for (var j = i; j < i + 8; j++)
         {
-            out += data[i].value;
-            out += ' ';
+            if (data[j].value > sum)
+            {
+                out += data[j].value;
+                out += ' ';
+            }
         }
+        i += 8;
     }
-    document.getElementById("res").value = out;
+    document.getElementById("rez").value = out;
 }
