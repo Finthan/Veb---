@@ -50,7 +50,7 @@ function java2(obj)
 
 function array()
 {
-    var data = document.getElementsByClassName("value");
+    var data = document.getElementsById("value");
     var sum;
     var result;
 
