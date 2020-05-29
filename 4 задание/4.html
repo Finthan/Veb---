@@ -22,94 +22,146 @@
         <div class="col-4">
 
           <h1>Задание 4.1</h1>
-
+          <h3> Площадь параллелограмма по основанию и высоте параллелограмма </h3>
           <form name="form1">
-            Введите значение стороны: <input type="NumberInput" name="num1" size=10><br>
-            Введите значение высоты: <input type="NumberInput" name="num2" size=10><br>
-            <input type="button" value=вычислить onClick="java1(form1)"><br>
-            Площадь параллелограмма равна: <input type="text" name="res" size=10><br>
+            Введите значение стороны: <br><input type="NumberInput" name="num1" size=10><br>
+            Введите значение высоты: <br><input type="NumberInput" name="num2" size=10><br>
+            <input type="button" value=вычислить onClick="SquareJava1(form1)"><br>
+            Площадь параллелограмма равна: <br><input type="text" name="res" size=10><br>
             <input type="reset" value=очистить><br><br><br>
           </form>
 
+          <h3> Площадь параллелограмма по стороне и высоте, опущенной на эту сторону </h3>
+            <form name="form2">
+                Введите значение стороны: <br><input type="NumberInput" name="num1" size=10><br><br>
+                Введите значение высоты, опущенной на эту сторону: <br><input type="NumberInput" name="num2" size=10><br><br>
+                <input type="button" value="вычислить" onClick="SquareJava2(form2)"><br><br>
+                Площадь параллелограмма равна <br><input type="text" name="res" size=10><br><br>
+                <input type="reset" value=очистить><br><br><br>
+            </form>
+
+            <h3> Площадь параллелограмма по двум сторонам и углу между ними </h3>
+            <form name="form3">
+                Введите значение первой стороны: <br><input type="NumberInput" name="num1" size=10><br><br>
+                Введите значение второй стороны: <br><input type="NumberInput" name="num2" size=10><br><br>
+                Введите значение угла: <br><input type="NumberInput" name="num3" size=10><br><br>
+                <input type="button" value="вычислить" onClick="SquareJava3(form3)"><br><br>
+                Площадь параллелограмма равна <br><input type="text" name="res" size=10><br><br>
+                <input type="reset" value=очистить><br><br><br>
+            </form>
+
+            <h3> Площадь параллелограмма по двум диагоналям и углу между этими диагоналями </h3>
+            <form name="form4">
+                Введите значение первой диагонали: <br><input type="NumberInput" name="num1" size=10><br><br>
+                Введите значение второй диагонали: <br><input type="NumberInput" name="num2" size=10><br><br>
+                Введите значение угла: <br><input type="NumberInput" name="num3" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="SquareJava4(form4)"><br><br>
+                Площадь параллелограмма равна <br><input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить><br><br><br>
+            </form>
+
+            <h3> Площадь параллелограмма по вписанной окружности и стороне </h3>
+            <form name="form5">
+                Введите значение стороны: <br><input type="NumberInput" name="num1" size=10><br><br>
+                Введите значение радиуса вписанной окружности: <br><input type="NumberInput" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="SquareJava5(form5)"><br><br>
+                Площадь параллелограмма равна <br><input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить><br><br><br>
+            </form>
+
+            <h3> Площадь параллелограмма по вписанной окружности и углу между сторонами </h3>
+            <form name="form6">
+                Введите значение угла между соронами: <br><input type="NumberInput" name="num1" size=10><br><br>
+                Введите значение радиуса вписанной окружности: <br><input type="NumberInput" name="num2" size=10><br><br>
+                <input type="button" value="Вычислить" onClick="SquareJava6(form6)"><br><br>
+                Площадь параллелограмма равна <br><input type="text" name="res" size=10><br><br>
+                <input type="reset" value=Очистить><br><br><br>
+            </form>
+
+        </div>
+        <div class="col-4">
           <h1>Задание 4.2</h1>
 
           <form name="form2">
-            Введите первое натуральное число: <input type = "NumberInput" name = "num1" size=10><br>
-            Введите второе натуральное число: <input type = "NumberInput" name = "num2" size=10><br>
+            Введите первое натуральное число: <br><input type = "NumberInput" name = "num1" size=10><br>
+            Введите второе натуральное число: <br><input type = "NumberInput" name = "num2" size=10><br>
             <input type="button" value = вычислить onClick = "java2(form2)"><br>
-            Простые числа в этом промежутке: <input type = "text" name = "res" size=30><br>
-            <input type = "reset" value = очистить><br>
+            Простые числа в этом промежутке: <br><input type = "text" name = "res" size=30><br>
+            <input type = "reset" value = очистить><br><br>
           </form>
-        </div>
-        <div class="col-4">
           
           <h1>Задание 4.3</h1>
           <div>
-            <input id = "value[0][0]" type = "number" value = "1" size = "2">
-            <input id = "value[0][1]" type = "number" value = "2" size = "2">
-            <input id = "value[0][2]" type = "number" value = "3" size = "2">
-            <input id = "value[0][3]" type = "number" value = "4" size = "2">
-            <input id = "value[0][4]" type = "number" value = "9" size = "2">
-            <input id = "value[0][5]" type = "number" value = "8" size = "2">
-            <input id = "value[0][6]" type = "number" value = "6" size = "2">
-            <input id = "value[0][7]" type = "number" value = "9" size = "2">
+            <input name = "value" row= "0" type = "number" value = "1" size = "2">
+            <input name = "value" row= "0" type = "number" value = "2" size = "2">
+            <input name = "value" row= "0" type = "number" value = "3" size = "2">
+            <input name = "value" row= "0" type = "number" value = "4" size = "2">
+            <input name = "value" row= "0" type = "number" value = "9" size = "2">
+            <input name = "value" row= "0" type = "number" value = "8" size = "2">
+            <input name = "value" row= "0" type = "number" value = "6" size = "2">
+            <input name = "value" row= "0" type = "number" value = "9" size = "2">
           </div><br>
           <div>
-            <input id = "value[1][0]" type = "number" value = "1" size = "2">
-            <input id = "value[1][1]" type = "number" value = "2" size = "2">
-            <input id = "value[1][2]" type = "number" value = "3" size = "2">
-            <input id = "value[1][3]" type = "number" value = "4" size = "2">
-            <input id = "value[1][4]" type = "number" value = "9" size = "2">
-            <input id = "value[1][5]" type = "number" value = "8" size = "2">
-            <input id = "value[1][6]" type = "number" value = "6" size = "2">
-            <input id = "value[1][7]" type = "number" value = "9" size = "2">
+            <input name = "value" row= "1" type = "number" value = "1" size = "2">
+            <input name = "value" row= "1" type = "number" value = "2" size = "2">
+            <input name = "value" row= "1" type = "number" value = "3" size = "2">
+            <input name = "value" row= "1" type = "number" value = "4" size = "2">
+            <input name = "value" row= "1" type = "number" value = "9" size = "2">
+            <input name = "value" row= "1" type = "number" value = "8" size = "2">
+            <input name = "value" row= "1" type = "number" value = "6" size = "2">
+            <input name = "value" row= "1" type = "number" value = "9" size = "2">
           </div><br>
           <div>
-            <input id = "value[2][0]" type = "number" value = "1" size = "2">
-            <input id = "value[2][1]" type = "number" value = "2" size = "2">
-            <input id = "value[2][2]" type = "number" value = "3" size = "2">
-            <input id = "value[2][3]" type = "number" value = "4" size = "2">
-            <input id = "value[2][4]" type = "number" value = "9" size = "2">
-            <input id = "value[2][5]" type = "number" value = "8" size = "2">
-            <input id = "value[2][6]" type = "number" value = "6" size = "2">
-            <input id = "value[2][7]" type = "number" value = "9" size = "2">
+            <input name = "value" row= "2" type = "number" value = "1" size = "2">
+            <input name = "value" row= "2" type = "number" value = "2" size = "2">
+            <input name = "value" row= "2" type = "number" value = "3" size = "2">
+            <input name = "value" row= "2" type = "number" value = "4" size = "2">
+            <input name = "value" row= "2" type = "number" value = "9" size = "2">
+            <input name = "value" row= "2" type = "number" value = "8" size = "2">
+            <input name = "value" row= "2" type = "number" value = "6" size = "2">
+            <input name = "value" row= "2" type = "number" value = "9" size = "2">
           </div><br>
           <div>
-            <input id = "value[3][0]" type = "number" value = "1" size = "2">
-            <input id = "value[3][1]" type = "number" value = "2" size = "2">
-            <input id = "value[3][2]" type = "number" value = "3" size = "2">
-            <input id = "value[3][3]" type = "number" value = "4" size = "2">
-            <input id = "value[3][4]" type = "number" value = "9" size = "2">
-            <input id = "value[3][5]" type = "number" value = "8" size = "2">
-            <input id = "value[3][6]" type = "number" value = "6" size = "2">
-            <input id = "value[3][7]" type = "number" value = "9" size = "2">
+            <input name = "value" row= "3" type = "number" value = "1" size = "2">
+            <input name = "value" row= "3" type = "number" value = "2" size = "2">
+            <input name = "value" row= "3" type = "number" value = "3" size = "2">
+            <input name = "value" row= "3" type = "number" value = "4" size = "2">
+            <input name = "value" row= "3" type = "number" value = "9" size = "2">
+            <input name = "value" row= "3" type = "number" value = "8" size = "2">
+            <input name = "value" row= "3" type = "number" value = "6" size = "2">
+            <input name = "value" row= "3" type = "number" value = "9" size = "2">
           </div><br>
           <div>
-            <input id = "value[4][0]" type = "number" value = "1" size = "2">
-            <input id = "value[4][1]" type = "number" value = "2" size = "2">
-            <input id = "value[4][2]" type = "number" value = "3" size = "2">
-            <input id = "value[4][3]" type = "number" value = "4" size = "2">
-            <input id = "value[4][4]" type = "number" value = "9" size = "2">
-            <input id = "value[4][5]" type = "number" value = "8" size = "2">
-            <input id = "value[4][6]" type = "number" value = "6" size = "2">
-            <input id = "value[4][7]" type = "number" value = "9" size = "2">
+            <input name = "value" row= "4" type = "number" value = "1" size = "2">
+            <input name = "value" row= "4" type = "number" value = "2" size = "2">
+            <input name = "value" row= "4" type = "number" value = "3" size = "2">
+            <input name = "value" row= "4" type = "number" value = "4" size = "2">
+            <input name = "value" row= "4" type = "number" value = "9" size = "2">
+            <input name = "value" row= "4" type = "number" value = "8" size = "2">
+            <input name = "value" row= "4" type = "number" value = "6" size = "2">
+            <input name = "value" row= "4" type = "number" value = "9" size = "2">
           </div><br>
           <div>
-            <input id = "value[5][0]" type = "number" value = "1" size = "2">
-            <input id = "value[5][1]" type = "number" value = "2" size = "2">
-            <input id = "value[5][2]" type = "number" value = "3" size = "2">
-            <input id = "value[5][3]" type = "number" value = "4" size = "2">
-            <input id = "value[5][4]" type = "number" value = "9" size = "2">
-            <input id = "value[5][5]" type = "number" value = "8" size = "2">
-            <input id = "value[5][6]" type = "number" value = "6" size = "2">
-            <input id = "value[5][7]" type = "number" value = "9" size = "2">
-          </div>
+            <input name = "value" row= "5" type = "number" value = "1" size = "2">
+            <input name = "value" row= "5" type = "number" value = "2" size = "2">
+            <input name = "value" row= "5" type = "number" value = "3" size = "2">
+            <input name = "value" row= "5" type = "number" value = "4" size = "2">
+            <input name = "value" row= "5" type = "number" value = "9" size = "2">
+            <input name = "value" row= "5" type = "number" value = "8" size = "2">
+            <input name = "value" row= "5" type = "number" value = "6" size = "2">
+            <input name = "value" row= "5" type = "number" value = "9" size = "2">
+          </div><br>
           <input type = "button" value = "Узнать" onClick = "array()"><br><br>
           <input id = "rez" type = "text" size = 40>
         </div>
+        
         <div class="col-4">
-          a f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
-          a f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
+          <h1> Рандом</h1>
+          Введите минимальное значение элемента: <input id="min" type="NumberInput"><br><br>
+          Введите максимальное значение элемента: <input id="max" type="NumberInput"><br><br>
+            <input type="button" value="Рандом" onClick="Random()"><br><br>
+            Сгенерированное число: <input id="rez2" type="text"><br><br>
+            <table id="matrix"></table><br>
         </div>
       </div>
     </div>
@@ -124,4 +176,5 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
     crossorigin="anonymous"></script>
   </body>
+  <script src="JS.js"></script>
 </html>
