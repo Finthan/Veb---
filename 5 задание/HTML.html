@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>5 задание</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core.js"></script>
+    </head>
+
+    <body onload="init();">
+        <canvas id="canvas" width="700" height="700" onclick="goInput(event);">
+        </canvas>
+        <form>
+            <input type="button" value="Вверх" onclick="move('up')">
+            <input type="button" value="Вниз" onclick="move('down')">
+            <input type="button" value="Влево" onclick="move('left')">
+            <input type="button" value="Вправо" onclick="move('right')">
+            <input type="button" value="Рандом" onclick="move('random')">
+            <input type="button" value="Хаос" onclick="move('chaos')">
+            <input type="button" value="Стоп" onclick="clearInterval(idTimer); isStop = true;">
+        </form>
+    </body>
+    <script src="JS.js"></script>
+</html>
