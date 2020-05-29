@@ -50,25 +50,26 @@ function java2(obj)
 
 function array()
 {
-    var data = document.getElementsByClassName("Value");
-    var sum = 0;
-    var out;
-    var i = 0;
-    while (i < data.length)
+    var data = document.getElementsByClassName("value");
+    var sum;
+    var result;
+
+    for (var i = 0; i < data.length; i++)
     {
-        for (var j = i; j < i + 8; j++)
+        sum = 0;
+        for (var j = 0; j < data[i].length; j++)
         {
             sum += +data[j].value;
         }
-        for (var j = i; j < i + 8; j++)
+
+        for (var j = 0; j < data[i].length; j++)
         {
-            if (data[j].value > sum)
+            if (data[i][j].value > sum)
             {
-                out += data[j].value;
-                out += ' ';
+                result[] = data[j].value;
             }
         }
-        i += 8;
     }
-    document.getElementById("rez").value = out;
+
+    document.getElementById("rez").value = result.join(", ");
 }
