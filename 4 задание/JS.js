@@ -60,9 +60,8 @@ function array()
         for (var j = 0; j < data[i].length; j++)
         {
             sum += +data[i][j].value;
-            sum = sum / data[i].length;
         }
-
+        sum = sum / data[i].length;
         for (var j = 0; j < data[i].length; j++)
         {
             if (data[i][j].value > sum)
