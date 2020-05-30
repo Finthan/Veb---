@@ -30,9 +30,9 @@ function SquareJava2(obj) {
 }
 
 function SquareJava3(obj) {
-    var a = obj.num1.value;
-    var b = obj.num2.value;
-    var sin = obj.num3.value;
+    var a = parseInt(obj.num1.value);
+    var b = parseInt(obj.num2.value);
+    var sin = parseInt(obj.num3.value);
     if (sin > 90 && sin < -90) {
         obj.res.value = 'Error';
     }
@@ -50,9 +50,9 @@ function SquareJava3(obj) {
 }
 
 function SquareJava4(obj) {
-    var a = obj.num1.value;
-    var b = obj.num2.value;
-    var sin = obj.num3.value;
+    var a = parseInt(obj.num1.value);
+    var b = parseInt(obj.num2.value);
+    var sin = parseInt(obj.num3.value);
     if (sin > 90) {
         obj.res.value = 'Error';
     }
@@ -69,8 +69,8 @@ function SquareJava4(obj) {
 }
 
 function SquareJava5(obj) {
-    var a = obj.num1.value;
-    var r = obj.num2.value;
+    var a = parseInt(obj.num1.value);
+    var r = parseInt(obj.num2.value);
     var s = 2 * a * r;
     if (s > 0) {
         obj.res.value = s;
@@ -82,8 +82,8 @@ function SquareJava5(obj) {
 
 function SquareJava6(obj) {
 
-    var r = obj.num2.value;
-    var sin = obj.num1.value;
+    var r = parseInt(obj.num2.value);
+    var sin = parseInt(obj.num1.value);
     if (sin > 90) {
         obj.res.value = 'Error';
     }
@@ -101,33 +101,30 @@ function SquareJava6(obj) {
 
 function java2(obj)
 {
-    var M = obj.num1.value;
-    var N = obj.num2.value;
+    var N = parseInt(obj.num1.value);
+    var M = parseInt(obj.num2.value);
 
-    var j;
+    var j, PrimeCheck;
 
-    console.log( obj ) ;
+    obj.res.value = '';
 
-    for (let i = M; i <= N; i++)
+    for (var i = N; i <= M; i++) // Для всех i...
     {
-        if (i == 1 || i == 2 || i == 3 || i == 5 || i == 7)
+        PrimeCheck = false;
+        for (var j = 2; j < i; j++)  // проверить, делится ли число..
         {
-            obj.res.value += i;
-            obj.res.value += ' ';
-            ++j;
+            if (i % j == 0)
+            {
+                PrimeCheck = true;
+            }
         }
-        else
+        if ((PrimeCheck != true) && (i != M))
         {
-            if ((i % 2 != 0) && (i % 3 != 0) && (i % 3 != 0) && (i % 5 != 0) && (i % 7 != 0))
-            {
-                obj.res.value += i;
-                obj.res.value += ' ';
-                ++j;
-            }
-            else if (i == N && j == 0)
-            {
-                obj.res.value = 'не найдены натуральные числа';
-            }
+            obj.res.value += i + ', ';
+        }
+        else if (i == M)
+        {
+            obj.res.value += i + '.';
         }
     }
 }
