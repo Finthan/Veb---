@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+        var m = [
+            {
+                text: 'Гуманоиды (приматные) ',
+                children: [
+                    {
+                        text: 'Крылатые ',
+                        children: [
+                            {
+                                text: 'Ангелы ',
+                                children: []
+                            },
+                            {
+                                text: 'Горгониды ',
+                                children: []
+                            },
+                            {
+                                text: 'Крыланы (летунги, гламы) ',
+                                children: []
+                            }
+                        ]
+                    },
+                    {
+                        text: 'Люди ',
+                        children: [
+                            {
+                                text: 'Йети (снежные люди) ',
+                                children: []
+                            },
+                            {
+                                text: 'Орки ',
+                                children: []
+                            },
+                            {
+                                text: 'Тролли ',
+                                children: []
+                            },
+                            {
+                                text: 'Эльфы ',
+                                children: []
+                            },
+                            {
+                                text: 'Гномы ',
+                                children: []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                text: 'Полулюди ',
+                children: [
+                    {
+                        text: 'Звероголовые ',
+                        children: [
+                            {
+                                text: 'Минотавры ',
+                                children: []
+                            },
+                            {
+                                text: 'Кинокефалы ',
+                                children: []
+                            }
+                        ]
+                    },
+                    {
+                        text: 'Оборотни ',
+                        children: [
+                            {
+                                text: 'Берендеи ',
+                                children: []
+                            },
+                            {
+                                text: 'Веры ',
+                                children: []
+                            },
+                            {
+                                text: 'Волкодлаки (вервульфы) ',
+                                children: []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+        var ul = document.body.appendChild(document.createElement('ul'));
+
+        function Create(element, ul)
+        {
+            var li = ul.appendChild(document.createElement('li'));
+            li.appendChild(document.createTextNode(element.text));
+            if (element.children && element.children != undefined)
+            {
+                var newUl = li.appendChild(document.createElement('ul'));
+                for (child of element.children)
+                {
+                    Create(child, newUl);
+                }
+            }
+        }
+
+        for (child of m)
+        {
+            Create(child, ul);
+        }
+
+        function Information(element)
+        {
+            for (child of element.children)
+            {
+                if (child.children)
+                {
+                    console.dir(child);
+                    Information(child);
+                }
+            }
+        }
+
+        var doc = document;
+        Information(doc);
+
+    </script>
+</body>
+
+</html>

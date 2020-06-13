@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>5</title>
+</head>
+
+<body>
+    <script>
+        var m = [
+            {
+                text: 'Животные',
+                childs: [
+                    {
+                        text: 'Млекопитающие',
+                        childs: [
+                            'Коровы',
+                            'Ослы',
+                            'Собаки',
+                            'Тигры'
+                        ]
+                    },
+                    {
+                        text: 'Рыбы',
+                        childs: [
+                            {
+                                text: 'Аквариумные',
+                                childs: [
+                                    'Гуппи',
+                                    'Скалярии',
+                                    'Гурами'
+                                ]
+                            },
+                            {
+                                text: 'Морские',
+                                childs: [
+                                    'Морская форель'
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                text: 'Растения',
+                childs: [
+                    {
+                        text: 'Высшие растения',
+                        childs: [
+                            'Споровые',
+                            'Семенные'
+                        ]
+                    },
+                    {
+                        text: 'Водоросли',
+                        childs: [
+                            {
+                                text: 'Бурые водоросли',
+                                childs: [
+                                    'Ламинария',
+                                    'Фукус',
+                                ]
+                            },
+                            {
+                                text: 'Красные водоросли',
+                                childs: [
+                                    'Филлофора'
+                                ]
+                            }
+
+                        ]
+                    }
+                ]
+            },
+            {
+                text: 'Грибы',
+                childs: [
+                    {
+                        text: 'Шляпочные',
+                        childs: [
+                            'Белый гриб',
+                            'Мухомор'
+                        ]
+                    },
+                    {
+                        text: 'Дрожжи'
+                    },
+                    {
+                        text: 'Плесневые',
+                        childs: [
+                            'Мукор',
+                            'Пеницилл'
+                        ]
+                    }
+                ]
+            },
+            {
+                text: 'Бактерии'
+            },
+            {
+                text: 'Вирусы'
+            }
+        ]
+        function Create(m) {
+            var ul = document.createElement('ul')
+            for (var child of m) {
+                var li = document.createElement('li')
+                if (child.text !== undefined) {
+                    li.append(child.text)
+                }
+                if (typeof child !== 'object') {
+                    li.append(child)
+                }
+                else if (child.childs !== undefined) {
+                    li.append(Create(child.childs))
+                }
+                ul.append(li)
+            }
+            return ul
+        }
+        document.body.append(Create(m));
+
+        var doc = document;
+        Information(doc);
+
+        function Information(element) {
+            for (child of element.children) {
+                if (child.children) {
+                    console.dir(child);
+                    Information(child);
+                }
+            }
+        }
+        var doc = document;
+        Information(doc);
+    </script>
+</body>
+
+</html>
