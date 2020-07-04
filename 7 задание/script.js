@@ -1,4 +1,4 @@
-var imgstr = ['fon3.jpg', '2.png', '3.png', '4.png', '5.png'];
+var imgstr = ['fon3.jpg', '1.png', '2.png', '3.png', '4.png'];
 var imgx = [800, 75, 21, 100, 15];
 var imgy = [600, 75, 35, 85, 50];
 var imgs = [];
@@ -15,11 +15,14 @@ var lvl = 0;
 var name = prompt('Введите ваше имя')
 
 
-function display_table() {
+function display_table()
+{
 	let html = "<table id=\"gen\"><th>ИМЯ</th><th>ОЧКИ</th>";
-	for (let i = 0; i < localStorage.length; i++) {
+	for (let i = 0; i < localStorage.length; i++)
+	{
 		html += "<tr aling=\"center\">";
-		for (let j = 0; j < 1; j++) {
+		for (let j = 0; j < 1; j++)
+		{
 			let key = localStorage.key(i)
 			html += "<td>" + localStorage.key(i) + "</td>";
 			html += "<td>" + localStorage.getItem(key) + "</td>"
@@ -31,11 +34,13 @@ function display_table() {
 	document.getElementById("top").innerHTML = html;
 }
 
-function cls_ene_bul(i, j) {
+function cls_ene_bul(i, j)
+{
 	var x1 = enemies[i].x, y1 = enemies[i].y;
 	var x2 = buls[j].x, y2 = buls[j].y;
 
-	if ((x2 + imgx[2] > x1) && (x1 + imgx[3] > x2) && (y2 + imgy[2] > y1) && (y1 + imgy[3] > y2)) {
+	if ((x2 + imgx[2] > x1) && (x1 + imgx[3] > x2) && (y2 + imgy[2] > y1) && (y1 + imgy[3] > y2))
+	{
 		enemies.splice(i, 1);
 		buls.splice(j, 1);
 		score += 10;
@@ -44,14 +49,17 @@ function cls_ene_bul(i, j) {
 	return 0;
 }
 
-function cls_you_ebul(j) {
+function cls_you_ebul(j)
+{
 	var x1 = youx, y1 = youy;
 	var x2 = ebuls[j].x, y2 = ebuls[j].y;
 
-	if ((x2 + imgx[4] > x1) && (x1 + imgx[1] > x2) && (y2 + imgy[4] > y1) && (y1 + imgy[1] > y2)) {
+	if ((x2 + imgx[4] > x1) && (x1 + imgx[1] > x2) && (y2 + imgy[4] > y1) && (y1 + imgy[1] > y2))
+	{
 		endgame++;
 		ebuls.splice(0, ebuls.length);
-		if (endgame == 3) {
+		if (endgame == 3)
+		{
 			localStorage.setItem(name, score);
 			alert('ОГО! Вы набрали целых ' + score + ' очков. Обновите страницу чтобы начать новую игру.');
 			display_table();
@@ -62,28 +70,30 @@ function cls_you_ebul(j) {
 	return 0;
 }
 
-function new_bullet() {
+function new_bullet()
+{
 	var tmp = {};
 	tmp.x = youx + 33;
 	tmp.y = youy - 20;
 
 	buls.push(tmp);
-	//alert('igogo');
 }
 
-function new_ebullet(i) {
+function new_ebullet(i)
+{
 	var tmp = {};
 	tmp.x = enemies[i].x + Math.floor(imgx[3] / 2);
 	tmp.y = enemies[i].y + imgy[3] + 2;
 
 	ebuls.push(tmp);
-	//alert('igogo');
 }
 
-function new_enemies() {
+function new_enemies()
+{
 	if (enemies.length > 0) return;
 
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 5; i++)
+	{
 		var tmp = {};
 		tmp.x = i * 160 + 20;
 		tmp.y = 100;
@@ -91,59 +101,82 @@ function new_enemies() {
 	}
 }
 
-function move_bullets() {
-
-	for (var i = buls.length - 1; i >= 0; i--) {
+function move_bullets()
+{
+	for (var i = buls.length - 1; i >= 0; i--)
+	{
 		buls[i].y -= (7 + lvl);
-		for (var j = enemies.length - 1; j >= 0; j--) {
+		for (var j = enemies.length - 1; j >= 0; j--)
 			if (cls_ene_bul(j, i) == 1)
 				return 1;
-		}
 		if (buls[i].y < -40)
 			buls.splice(i, 1);
 	}
 }
 
-function move_ebullets() {
-	//var bul_del = 0;
-	for (var i = ebuls.length - 1; i >= 0; i--) {
+function move_ebullets()
+{
+	for (var i = ebuls.length - 1; i >= 0; i--)
+	{
 		ebuls[i].y += (7 + lvl);
 		if (cls_you_ebul(i) == 1)
 			return 1;
 
-		//if (bul_del==0)
 		if (ebuls[i].y > 550)
 			ebuls.splice(i, 1);
 	}
 
 }
 
-function move_you(e) {
+function move_you(e)
+{
 	if (endgame == 3) return;
-	if (e.keyCode == 37) { youmovex = -1; youmovey = 0; }//youx -=youstepx;
-	if (e.keyCode == 39) { youmovex = 1; youmovey = 0; }//youx +=youstepx;
+	if (e.keyCode == 37)
+	{
+		youmovex = -1;
+		youmovey = 0;
+	}
+	if (e.keyCode == 39)
+	{
+		youmovex = 1;
+		youmovey = 0;
+	}
 
-	if (e.keyCode == 38) { new_bullet(); }//youy -=youstepy;
-
-
-
-
+	if (e.keyCode == 38)
+	{
+		new_bullet();
+	}
 }
 
-function timer() {
+function timer()
+{
 	if (endgame == 3) return;
 	tcount++;
 
-	if (youx >= 800 - 5 - imgx[1]) { youmovex = -1; youmovey = 0; }
-	if (youx <= 0 + 5) { youmovex = 1; youmovey = 0; }
-	if (youy >= 600 - 5 - imgy[1]) { youmovey = -1; youmovex = 0; }
-	if (youy <= 200 + 5) { youmovey = 1; youmovex = 0; }
+	if (youx >= 800 - 5 - imgx[1])
+	{
+		youmovex = -1; youmovey = 0;
+	}
+	if (youx <= 0 + 5)
+	{
+		youmovex = 1; youmovey = 0;
+	}
+	if (youy >= 600 - 5 - imgy[1])
+	{
+		youmovey = -1; youmovex = 0;
+	}
+	if (youy <= 200 + 5)
+	{
+		youmovey = 1; youmovex = 0;
+	}
 
 	youx += youmovex * youstepx;
 	youy += youmovey * youstepy;
 
-	if (tcount % 50 == 0) {
-		for (var i = 0; i < enemies.length; i++) {
+	if (tcount % 50 == 0)
+	{
+		for (var i = 0; i < enemies.length; i++)
+		{
 			if (Math.random() < 0.2 + Math.min(0.1, 0.001 * (tcount % 100)))
 				new_ebullet(i);
 		}
@@ -157,16 +190,19 @@ function timer() {
 	dispID = setTimeout("timer();", time);
 }
 
-function ImagesInit() {
-	for (var i = 0; i <= 4; i++) {
+function ImagesInit()
+{
+	for (var i = 0; i <= 4; i++)
+	{
 		var tmp = new Image();
-		tmp.src = imgstr[i];//i+".png";
+		tmp.src = imgstr[i];
 		imgs.push(tmp);
 	}
 
 }
 
-function draw() {
+function draw()
+{
 	ImagesInit();
 	var cnv = document.getElementById("canvas");
 	var ctx = cnv.getContext("2d");
@@ -174,39 +210,46 @@ function draw() {
 	ctx.drawImage(imgs[0], 0, 0);
 	ctx.drawImage(imgs[1], youx, youy);
 
-	for (var i = 0; i < buls.length; i++) {
+	for (var i = 0; i < buls.length; i++)
+	{
 		ctx.drawImage(imgs[2], buls[i].x, buls[i].y);
 	}
 
-	for (var i = 0; i < enemies.length; i++) {
+	for (var i = 0; i < enemies.length; i++)
+	{
 		ctx.drawImage(imgs[3], enemies[i].x, enemies[i].y);
 	}
 
-	for (var i = 0; i < ebuls.length; i++) {
+	for (var i = 0; i < ebuls.length; i++)
+	{
 		ctx.drawImage(imgs[4], ebuls[i].x, ebuls[i].y);
 	}
 	ctx.fillStyle = "#470027";
 	ctx.font = "bold 20pt Arial";
-	ctx.fillText('Очки: ' + score + '', 50, 50);
-	ctx.fillText('Жизни: ' + (3 - endgame) + '', 250, 50);
-	ctx.fillText('Игрок: ' + name, 450, 50);
+	ctx.fillText('Очки: ' + score + '', 50, 30);
+	ctx.fillText('Жизни: ' + (3 - endgame) + '', 250, 30);
+	ctx.fillText('Игрок: ' + name, 450, 30);
 
 }
 
-function lvlplus() {
+function lvlplus()
+{
 	lvl += 5;
 }
 
 
-function stop() {
+function stop()
+{
 	clearInterval(dispID);
 }
 
-function resume() {
+function resume()
+{
 	timer();
 }
 
-function newgamer() {
+function newgamer()
+{
 	clearInterval(dispID);
 	localStorage.setItem(name, score);
 	name = prompt('Введите новое имя');
@@ -215,10 +258,3 @@ function newgamer() {
 	ImagesInit();
 	timer();
 }
-
-
-
-
-
-
-
