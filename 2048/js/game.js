@@ -1,16 +1,3 @@
-let createAndAppend = function({className, parentElement, value}, tag = 'div')
-{
-    let element = document.createElement(tag);
-    element.className = className;
-    if (value)
-    {
-        element.innerHTML = value;
-    }
-    parentElement.appenChild(element);
-
-    return element;
-}
-
 class Game
 {
     constructor(parentElement, size = 4)
@@ -34,20 +21,53 @@ class Game
             parentElement: gameFieldElement
         });
 
+        this.field = [];
+
         for(let i = 0; i < size; i++)
         {
+            this.field[i] = [];
             for(let k = 0; k < size; k++)
             {
-                let cellElement = createAndAppend({
-                    className: 'cell',
-                    parentElement: fieldElement
-                });
+                this.field[i][k] = new Cell(fieldElement);
+            }
+        }
 
-                if (Math.random() > 0.8)
+        /*this.fieldElement.onkeyup = function(e)
+        {
+
+        };*/
+
+        console.log(this.field);
+    }
+    spawnUnit()
+    {
+        let emptyCells = [];
+
+        for (let i = 0; i < this.field.length; i++)
+        {
+            for (let k = 0; k < this.field[i].length; k++)
+            {
+                if (!this.field[i][k].value)
                 {
-                    cellElement.innerHTML = Math.random() > 0.5 ? 4 : 2;
+                    emptyCells.push(this.field[i][k]);
                 }
             }
         }
+        if (emptyCells.length)
+        {
+            emptyCells[getRandomInt(0, emptyCells.length - 1)].spawn();
+        }
+        else
+        {
+            alert('Ты проиграл');
+        }
     }
+
+    /*moveRight()
+    {
+        for (let i = 0; i < this.field.length; i++)
+        {
+            for (let k = this.field[i])
+        }
+    }*/
 } 
