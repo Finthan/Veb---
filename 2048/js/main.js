@@ -13,7 +13,9 @@ let createAndAppend = function({className, parentElement, value}, tag = 'div')
 
 let getRandomInt = function(min, max)
 {
-    return Math.random(Math.random() * (max - min + 1)) + min;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var game = new Game(document.body, 4);

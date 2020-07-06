@@ -12,7 +12,6 @@ class Cell
             this.spawn();
         }
         
-        this.element.onclick = this.merge.bind(this);
     }
 
     get value()
@@ -24,6 +23,7 @@ class Cell
     {
         this._value = value;
         this.element.innerHTML = value == 0 ? '' : value;
+        this.element.setAttribute('data-ship', value);
     }
 
     clear()
@@ -31,13 +31,25 @@ class Cell
         this.value = '';
     }
 
-    merge()
+    merge(cell)
     {
-        this.value *= 2;
+        this.value += cell.value;
+        this.rating += cell.value;
+        cell.clear();
+    }
+
+    isSameTo(cell)
+    {
+        return this.value == cell.value;
     }
 
     spawn()
     {
         this.value = Math.random() > 0.5 ? 4 : 2;
+    }
+
+    get isEmpty()
+    {
+        return this.value == 0;
     }
 }
