@@ -8,14 +8,12 @@ class Game
             parentElement
         });
 
-        let headerElement = createAndAppend({
+        this.headerElement = createAndAppend({
             className: 'header',
             parentElement: gameFieldElement
         });
 
-        this.rating = 0;
-
-        headerElement.innerHTML = 'Счет: ' + this.rating;
+        this.raiting = 0;
 
         let fieldElement = createAndAppend({
             className: 'field',
@@ -29,7 +27,7 @@ class Game
             this.field[i] = [];
             for(let k = 0; k < size; k++)
             {
-                this.field[i][k] = new Cell(fieldElement);
+                this.field[i][k] = new Cell(fieldElement, this);
             }
         }
 
@@ -48,13 +46,25 @@ class Game
                     break;
                 case 39:
                     this.moveRight();
-                    break;
-                    
-                            
+                    break;     
             }
         }.bind(this);
+    }
 
-        console.log(this.field);
+    addRaiting(value)
+    {
+        this.raiting += value;
+    }
+
+    set raiting(value)
+    {
+        this._raiting = value;
+        this.headerElement.innerHTML = 'Счет: ' + value;
+    }
+
+    get raiting()
+    {
+        return this._raiting;
     }
 
     spawnUnit()
@@ -85,18 +95,22 @@ class Game
     {
         let hasMoved = false;
         let summa = false;
-        for (let i = 0; i < this.size; i++) {
-            for (let k = this.size - 2; k >= 0; k--) {
+        for (let i = 0; i < this.size; i++)
+        {
+            for (let k = this.size - 2; k >= 0; k--)
+            {
                 let currentCell = this.field[i][k];
-                if (currentCell.isEmpty) {
+                if (currentCell.isEmpty)
+                {
                     continue;
                 }
 
                 let nextCellKey = k + 1;
-                while (nextCellKey < this.size) {
-
+                while (nextCellKey < this.size)
+                {
                     let nextCell = this.field[i][nextCellKey];
-                    if (!nextCell.isEmpty || this.isLastKey(nextCellKey)) {
+                    if (!nextCell.isEmpty || this.isLastKey(nextCellKey))
+                    {
                         if ((nextCell.isEmpty && this.isLastKey(nextCellKey))
                             || nextCell.isSameTo(currentCell))
                         {
@@ -118,7 +132,6 @@ class Game
         if (hasMoved)
         {
             this.spawnUnit();
-            this.Raiting();
         }
     }
 
@@ -168,7 +181,6 @@ class Game
         if (hasMoved)
         {
             this.spawnUnit();
-            this.Raiting();
         }
     }
 
@@ -209,7 +221,6 @@ class Game
         if (hasMoved)
         {
             this.spawnUnit();
-            this.Raiting();
         }
     }
 
@@ -249,12 +260,6 @@ class Game
         if (hasMoved)
         {
             this.spawnUnit();
-            this.Raiting();
         }
-    }
-
-    Raiting()
-    {
-
     }
 } 
